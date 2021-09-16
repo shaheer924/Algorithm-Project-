@@ -1,7 +1,7 @@
 # Algorithm-Project-
 Algorithm Project Using Html, Css and Javascript
 # Algorithm Used
-1.Longest Common Subsequence
+\n1.Longest Common Subsequence
 2.Shortest Common Subsequence
 3.Leveshtein Distance
 4.Longest Increasing Subsequence
