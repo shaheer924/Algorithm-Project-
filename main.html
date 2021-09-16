@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    </link>
+    <link rel="stylesheet" href="./css/style.css">
+    </link>
+</head>
+
+<body>
+    <nav class="navbar" style="background-color: black;">
+        <div class="container-fluid">
+            <a class="navbar-brand"><b>Algorithms</b></a>
+            <form class="d-flex input-group w-auto">
+                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                    Home
+                </button>
+            </form>
+        </div>
+    </nav>
+    <br/>
+    <div class="container">
+        <div class="form-group" style="margin-left: 200px; margin-right: 200px;">
+            <form method="GET|POST">
+            <select class="form-control" id="sel1" onchange="javascript:handleSelect(this)">
+                <option>Select Algorithms</option>
+                <option value="./html_files/longest_common_subsequence">Longest Common SubSequence</option>
+                <option value="./html_files/shortest_common_supersequence">Shortest Common SuperSequence</option>
+                <option value="./html_files/levenshtein_distance">Levenshtein Distance</option>
+                <option value="./html_files/longest_increasing_subsequence" >Longest Increasing SubSequence</option>
+                <option value="./html_files/Matrix_chain_multiplication">Matrix Chain Multiplication</option>
+                <option value="./html_files/0_1_knapSack">0/1 Knapsack Problem</option>
+                <option value="./html_files/partition_problem">Partition Problem</option>
+                <option value="./html_files/Rod_cutting_problem - Copy">Rod Cutting Problem</option>
+                <option value="./html_files/coin_change_making_problem">Coin Change Making Problem</option>
+                <option value="./html_files/word_break">Word Break Problem</option>
+            </select>
+        </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function handleSelect(elm)
+        {
+           window.location = elm.value+".html";
+           console.log(elm.value);
+        }
+      </script>
+    <div class="container items">
+        <div class="row">
+            <a class="col-2 card" style="background-color: black;" href="./html_files/longest_common_subsequence.html">
+                <img src="./image/Longest-Common-Subsequence.png" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Longest Common SubSequence</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/shortest_common_supersequence.html">
+                <img src="./image/LCS-Recursion-Tree.png" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Shortest Common SubSequence</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/levenshtein_distance.html">
+                <img src="./image/1_aEqpI_gfxqyxNN6mGHn_AQ.png" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Levenshtein Distance</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/longest_increasing_subsequence.html">
+                <img src="./image/LPS-problem.png" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Longest Increasing Subsequence</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/Matrix_chain_multiplication.html">
+                <img src="./image/dp-array-31.png" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Matrix Chain Multiplication</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/0_1_knapSack.html">
+                <img src="./image/knapsack_problem.png" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">0-1-knapsack-problem</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/partition_problem.html">
+                <img src="./image/partitionProblemDP_0.gif" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Partition-problem</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/Rod_cutting_problem - Copy.html">
+                <img src="./image/rod cutting problem.PNG" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Rod Cutting Problem</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/coin_change_making_problem.html">
+                <img src="./image/image13.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Coin Change Making Problem</b></h6>
+                </div>
+            </a>
+            <a class="col-2 card" style="background-color: black;" href="./html_files/word_break.html">
+                <img src="./image/word break.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h6><b style="color: azure;">Word Break Problem</b></h6>
+                </div>
+            </a>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <footer id="sticky-footer" class="text-white-50" style="background-color: black; height: 60px;">
+        <div class="container text-center">
+          Made BY Syed Shaheer Aamir | Saroosh Ahmed 
+          <br/>
+          <div style="margin-left: 95px;">18K-1154 | 18K-0127</div>
+        </div>
+      </footer>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>
