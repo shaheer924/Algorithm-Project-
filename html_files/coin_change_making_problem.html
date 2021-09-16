@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    </link>
+    <link rel="stylesheet" href="../css/style.css">
+    </link>
+</head>
+
+<body>
+    <nav class="navbar" style="background-color: black;">
+        <div class="container-fluid">
+            <a class="navbar-brand"><b>Algorithms</b></a>
+            <form class="d-flex input-group w-auto">
+                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                    Home
+                </button>
+            </form>
+        </div>
+    </nav>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="form-group col-4">
+                <form method="GET|POST">
+                    <select class="form-control" id="sel1" onchange="javascript:handleSelect(this)">
+                        <option>Select Algorithms</option>
+                        <option value="./longest_common_subsequence">Longest Common SubSequence</option>
+                        <option value="./shortest_common_supersequence">Shortest Common SuperSequence</option>
+                        <option value="./levenshtein_distance">Levenshtein Distance</option>
+                        <option value="./longest_increasing_subsequence" >Longest Increasing SubSequence</option>
+                        <option value="./Matrix_chain_multiplication">Matrix Chain Multiplication</option>
+                        <option value="./0_1_knapSack">0/1 Knapsack Problem</option>
+                        <option value="./partition_problem">Partition Problem</option>
+                        <option value="./Rod_cutting_problem - Copy">Rod Cutting Problem</option>
+                        <option value="./coin_change_making_problem">Coin Change Making Problem</option>
+                        <option value="./word_break">Word Break Problem</option>
+                    </select>
+                </form>
+            </div>
+            <div class="col-2"></div>
+
+            <div class="col-6">
+                <label>Choose File To Evaluate</label>
+                <input type="file" name="inputfile" id="inputfile" placeholder="Input File">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function handleSelect(elm)
+        {
+           window.location = elm.value+".html";
+           console.log(elm.value);
+        }
+      </script>
+    <div class="container" style="background-color: cyan;">
+        <h1 style="text-align: center;">Coin Change Making Problem</h1>
+        <hr />
+        <br />
+        <div>
+            <h3><i style="color: darkgreen;">Random Numbers</i> : {<small id="out1"></small>}</h3>
+            <br />
+            <h3><i style="color: darkgreen;">Numbers of Element</i> : <b id="out2"></b></h3>
+            <br />
+            <h3><i style="color: darkgreen;">Best Time Complexity </i> : <d id=time></d>
+            </h3>
+            <br />
+            <h3><i style="color: darkgreen;">Average Time Complexity </i> : <d id=avg></d>
+            </h3>
+            <br />
+            <h3><i style="color: darkgreen;">Worst Time Complexity </i> : <d id=wrst></d>
+            </h3>
+            <br />
+            <h3><i style="color: darkgreen;">Space Complexity </i> : <d id=space></d>
+            </h3>
+            <br />
+            <h3><i style="color: darkgreen;">Number of Possibilities </i> : <d id=sack></d>
+            </h3>
+        </div>
+        <br />
+        <button style="margin-left: 45%;" onclick="RodCutting()"> Evaluate</button>
+        <br />
+    </div>
+    <br>
+    <script src="./file1.js">
+    </script>
+    <script>
+        function RodCutting(a) {
+
+            //console.log("string",st1);
+           /*var len;
+            var price = [1,5,8,9,10,17,17,20];
+            var time_complexity = "O(M*N)";
+            document.getElementById("time").innerHTML = time_complexity;
+            document.getElementById("space").innerHTML = time_complexity;
+            document.getElementById("avg").innerHTML = time_complexity;
+            document.getElementById("wrst").innerHTML = time_complexity;
+            len = price.length;
+            var rodcut=0;
+            document.getElementById("out1").innerHTML=price;
+            document.getElementById("out2").innerHTML=price.length;
+            var maximum = new Array(len);
+            var previous=0;
+            for(var i=1;i<=len;i++)
+            {
+                for(var j=0;j<=i;j++)
+                {
+                    rodcut = price[i-1] +(j-i);
+                    console.log("Rodcut", rodcut);
+                    maximum[i] = Math.max(rodcut,previous);
+                    previous = rodcut;
+                }
+                console.log(maximum[i]);
+            }*/
+            var coin = a;
+            document.getElementById("out1").innerHTML=coin;
+            document.getElementById("out2").innerHTML=coin.length;
+            var n = 127, m = coin.length;
+            var time_complexity = "O(M*N)";
+            document.getElementById("time").innerHTML = time_complexity;
+            document.getElementById("space").innerHTML = time_complexity;
+            document.getElementById("avg").innerHTML = time_complexity;
+            document.getElementById("wrst").innerHTML = time_complexity;
+
+            var arr = new Array(n+1);
+            console.log("m", m, "n", n, "size", arr.length);
+            for (var i = 0; i < n + 1; i++) {
+                arr[i] = new Array(m);
+            }
+            for(var i=0;i<m;i++)
+            {
+                arr[0][i]=1;
+            }
+            /*for(var i=1;i<n+1;i++)
+            {
+                if((i+1)%coin[0] == 0)
+                {
+                    arr[0][i]=1;
+                }
+                else
+                {
+                    arr[0][i]=0;
+                }
+                console.log("i",0,"j",i,"arr",aarr[0][i],"coin",coin[0]);
+            }*/
+            var x=0,y=0;
+            for(var i=1;i<n+1;i++)
+            {
+                for(var j=0;j<m;j++)
+                {
+                    if(i-coin[j]>=0)
+                    {
+                        x=arr[i-coin[j]][j];
+                    }
+                    else
+                    {
+                        x=0;
+                    }
+                    if(j >= 1 )
+                    {
+                       y=arr[i][j-1];
+                    }
+                    else
+                    {
+                        y=0;
+                    }
+                    arr[i][j]=x+y;
+                    console.log("i",i,"j",j,"arr",arr[i][j],"x",x,"y",y);
+                }
+            }
+            document.getElementById("sack").innerHTML = arr[n][m-1];
+
+        }
+    </script>
+    <footer id="sticky-footer" class="text-white-50" style="background-color: black; height: 60px;">
+        <div class="container text-center">
+            Made BY Syed Shaheer Aamir | Saroosh Ahmed
+            <br />
+            <div style="margin-left: 95px;">18K-1154 | 18K-0127</div>
+        </div>
+    </footer>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>
